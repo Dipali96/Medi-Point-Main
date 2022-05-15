@@ -1,0 +1,133 @@
+{% extends 'main.html'%}
+{% block content_block%}
+<div class="book_apointment_area">
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-lg-7">
+                <div class="popup_box ">
+                    <div class="popup_inner">
+                        <div class='row'>
+                            <div class="col-xs-12 col-md-12 col-lg-12">
+                               <a class="btn btn-primary btn-md pull-right" href="{% url 'doctor_manage_slots' %}">View slots</a>
+                            </div>
+    <div class="col-xs-12 col-md-12 col-lg-12">
+    <form method="POST" action="#">
+		{% csrf_token %}
+      
+        <div class="form-group row">
+            <div class="col-xs-12 col-md-12 col-lg-12">
+                <label for="field">Select Day:</label>
+		<select id="field1" name="day" class="form-control">
+            <option selected disabled >Select day</option>
+			{% for d in day %}
+				<option value="{{d.day}}">{{d.day}}</option>
+			{% endfor %}
+		</select>
+            </div>
+
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <label for="field">Start time:</label>
+                <select class="form-control" id="field2" name="time_from">
+                    <option selected disabled >Select Time</option>
+                    <option value="1">1</option>
+                
+                    <option value="2">2</option>
+                
+                    <option value="3">3</option>
+                
+                    <option value="4">4</option>
+                
+                    <option value="5">5</option>
+                
+                    <option value="6">6</option>
+                
+                    <option value="7">7</option>
+        
+                    <option value="8">8</option>
+        
+                    <option value="9">9</option>
+        
+                    <option value="10">10</option>
+        
+                    <option value="11">11</option>
+        
+                    <option value="12">12</option>
+                
+            </select>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <label for="field">AM/PM:</label>
+    <select id="field3" class="form-control" name="time_from_day">
+        <option selected disabled >Select AM/PM</option>
+        <option   value="am">AM</option>
+    
+        <option value="pm">PM</option>
+    
+      
+    
+</select>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <label for="field">End time:</label>
+                <select class="form-control"class="form-control" id="field" name="time_to" >
+                    <option selected disabled >Select Time</option>
+                    <option  value="1">1</option>
+                
+                    <option value="2">2</option>
+                
+                    <option value="3">3</option>
+                
+                    <option value="4">4</option>
+                
+                    <option value="5">5</option>
+                
+                    <option value="6">6</option>
+                
+                    <option value="7">7</option>
+            
+                    <option value="8">8</option>
+            
+                    <option value="9">9</option>
+            
+                    <option value="10">10</option>
+            
+                    <option value="11">11</option>
+            
+                    <option value="12">12</option>
+                
+            </select>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <label for="field">AM/PM:</label>
+                
+                <select class="form-control" id="field2" name="time_to_day">
+                    <option selected disabled >Select AM/PM</option>
+                    <option value="am">AM</option>
+                
+                    <option value="pm">PM</option>
+                
+                
+                
+                </select>
+            </div>
+
+        </div>
+		
+
+ 
+    
+  
+
+		<input class="btn btn-primary" type="submit" name="submit">
+
+	</form>
+</div>
+</div>          
+                         
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock%}

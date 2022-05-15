@@ -1,0 +1,62 @@
+{% extends 'main.html'%}
+{% block content_block%}
+	<div class="book_apointment_area">
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-lg-7">
+                    <div class="popup_box ">
+                        <div class="popup_inner">
+                            <h3>
+                                Patient Registration
+                            </h3>
+                            {% if error_message %}
+                           
+                            <div class="alert alert-danger" role="alert">
+                              {{ error_message }}
+                            </div>
+                            {% endif %}
+                            <form method="POST" action="#">
+								{% csrf_token %}
+                                <div class="row form-group">
+                                    <div class="row form-group">
+                                        <div class="col-xl-12 form-group">
+                                            <input required type="text" name="username" value="{{request.POST.username}}" placeholder="Username " class="form-control">
+                                        </div>
+                                        <div class="col-xl-12 form-group">
+                                            <input required type="password" name="password" placeholder="Password" class="form-control">
+                                        </div>
+                                        <div class="col-xl-12 form-group">
+                                            <input required type="text" name="f_name" value="{{request.POST.f_name}}" placeholder="First Name " class="form-control">
+                                        </div>
+                                        <div class="col-xl-12 form-group">
+                                            <input required type="text" name="l_name" value="{{request.POST.l_name}}" placeholder="Last Name" class="form-control">
+                                        </div>
+                                        <div class="col-xl-12 form-group">
+                                            <input required type="number" name="aadhaar" value="{{request.POST.aadhaar}}" placeholder="Aadhaar Card Number " class="form-control">
+                                        </div>
+                                        <div class="col-xl-12 form-group">
+                                            <input required type="text" name="address" value="{{request.POST.address}}" placeholder="Address" class="form-control">
+                                        </div>
+                                        <div class="col-xl-12 form-group">
+                                            <input required type="number"  name="phone_no" value="{{request.POST.phone_no}}" placeholder="Contact Number " class="form-control">
+                                        </div>
+                                        <div class="col-xl-12 form-group">
+                                            <label for="Male">Male</label>
+                                            <input required type="radio" id="Male" name="gender" value="M" class="form-control">
+                                            <label for="Female">Female</label>
+                                            <input required type="radio" id="Female" name="gender" value="F" class="form-control">
+                                        </div>
+                                    <div class="col-xl-12">
+                                        <button type="submit" class="boxed-btn3">Register</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	</form>
+{% endblock %}

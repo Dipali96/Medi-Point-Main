@@ -1,0 +1,52 @@
+{% extends 'main.html'%}
+{% block content_block%}
+    
+    <div class="book_apointment_area">
+      <div class="container">
+          <div class="row justify-content-end">
+              <div class="col-lg-7">
+                  <div class="popup_box ">
+                      <div class="popup_inner">
+                        {% if messages %}
+                        {% for message in messages %}
+                        <div class="alert {{ message.tags }}" role="alert">
+                          {{ message }}
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+
+
+                        <div class='row'>
+                         <div class="col-xs-12 col-md-12 col-lg-12">
+                          <a class="btn btn-primary btn-md pull-right" href="{% url 'doctor_add_slots' %}">Add slots</a>
+                         </div>
+                         <div class="col-xs-12 col-md-12 col-lg-12">
+                         
+                        <table  id="dslots"  class="table table-striped table-bordered" style="width:100%">
+                          <tr>
+                            <th>Day</th>
+                            <th>Timings</th>
+                            <th>Action</th>
+                          </tr>
+                          {% for st in slot %}
+                          <tr>
+                            <td>{{st.day}}</td>
+                            <td>{{st.time}}</td>
+                            <td><a class="btn btn-danger btn-sm" href="{% url 'delete_slot' st.id%}">Delete</a></td>
+                          </tr>
+                          {% endfor %}
+                        </table>
+                         </div>
+                        </div>
+                      
+                         
+                          
+                         
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+{% endblock %}

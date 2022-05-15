@@ -1,0 +1,33 @@
+{% extends 'main.html'%}
+{% block content_block%}
+	{% comment %} <h1>This is homepage</h1>
+	{% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+    {% else %}
+		<li><a class="nav-link text-light" href="{% url 'login'%}">&nbsp; <strong>Login</strong> </a></li>
+		<li><a class="nav-link text-light" href="{% url 'pregister'%}">&nbsp; <strong>Patient Register</strong> </a></li>
+		<li><a class="nav-link text-light" href="{% url 'dregister'%}">&nbsp; <strong>Doctor Register</strong> </a></li>
+	{% endif %} {% endcomment %}
+
+	
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="slider_active owl-carousel">
+            <div class="single_slider  d-flex align-items-center slider_bg_1 overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text ">
+                                <span>the best medical center</span>
+                                <h3> <span>Bringing health</span> <br>
+                                    to life for the whole family.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_end -->
+
+{% endblock %}

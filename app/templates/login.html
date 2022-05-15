@@ -1,0 +1,48 @@
+{% extends 'main.html'%}
+
+{% block content_block%}
+
+	
+	<div class="book_apointment_area">
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-lg-7">
+                    <div class="popup_box ">
+                        <div class="popup_inner">
+                            <h3>
+                                Login
+                           
+                            </h3>
+                            {% if is_message == True %}
+                           
+                            <div class="alert alert-danger" role="alert">
+                              {{ message }}
+                            </div>
+                            
+                            {% endif %}
+                            <form action="#" method='POST'>
+								{% csrf_token %}
+                                <div class="row">
+                                   
+                                    <div class="col-xl-12">
+
+                                        <label for="field">Username</label>
+                                        <input type="text" name="username" value="{{request.POST.username}}" placeholder="Username* " required>
+                                    </div>
+                                    <div class="col-xl-12">
+                                        <label for="field">Password</label>
+                                        <input type="password" name="password"   placeholder="Password*" required>
+                                    </div>
+                                    
+                                    <div class="col-xl-12">
+                                        <button type="submit" class="boxed-btn3">Login</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	{% endblock %}

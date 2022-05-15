@@ -1,0 +1,21 @@
+{% extends 'main.html'%}
+{% block content_block%}
+	<h1>SCHEDULE BOOKING</h1>
+	{% if a %}
+		<h1>{{field}} Doctors</h1>
+			{% for doc in docs %}
+				<li><a href="{% url 'doctor' doc.doctor.username.username %}">{{doc.doctor.username.username}}</a></li>
+			{% endfor %}
+	{% else %}
+		<h3>Choose youur Category</h3>
+		<form method="POST" action="#">
+			{% csrf_token %}
+			<select id="field" name="field" size="7">
+				{% for ft in fields %}
+					<option value="{{ft.field}}">{{ft.field}}</option>
+				{% endfor %}
+			</select>
+			<input type="submit" name="submit">
+		</form>
+	{% endif %}
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'main.html'%}
+
+{% block content_block%}
+<div class="Emergency_contact" style="padding-top: 120px;">
+    <div class="Emergency_contact_inner ">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="single_emergency">
+                        <div class="info">
+                            <span>Are you a Patient?</span>
+                            <h3>Patient Registration</h3>
+                        </div>
+                        <div class="info_button">
+                            <a href="{% url 'pregister'%}" class="boxed-btn3-white">Click Here</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="single_emergency">
+                        <div class="info">
+                            <span>Are you a Doctor?</span>
+                            <h3>Doctor Registration</h3>
+                        </div>
+                        <div class="info_button">
+                            <a href="{% url 'dregister'%}" class="boxed-btn3-white">Click Here</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
